@@ -1,0 +1,222 @@
+:root {
+    --white: hsl(0 0% 100%);
+    --lightRed: hsl(0, 100%, 67%);
+    --orangeyYellow: hsl(39, 100%, 56%);
+    --greenTeal: hsl(166, 100%, 37%);
+    --cobaltBlue: hsl(234, 85%, 45%);
+    --paleBlue: hsl(221, 100%, 96%);
+    --lightLavender: hsl(241, 100%, 89%);
+    --darkGrayBlue: hsl(224, 30%, 27%);
+
+    /* gradients bg*/
+    ---lightslateblue: hsl(252, 100%, 67%);
+    --lightroyalblue: hsl(241, 81%, 54%);
+
+    /* circle bg */
+    --violetblue: hsla(256, 72%, 46%, 1);
+    --persianblue: hsla(241, 72%, 46%, 0);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+span {
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'HankenGrotesk-VariableFont_wght';
+    font-style: normal;
+    font-weight: 400;
+    src:
+     url('./results-summary-component-main/results-summary-component-main/assets/fonts/static/HankenGrotesk-Bold.ttf') format('tff'),
+     url('./results-summary-component-main/results-summary-component-main/assets/fonts/static/HankenGrotesk-ExtraBold.ttf') format('tff'),
+     url('./results-summary-component-main/results-summary-component-main/assets/fonts/static/HankenGrotesk-Medium.ttf') format('tff')
+    ;
+}
+
+body {
+    font-family: 'HankenGrotesk-VariableFont_wght', sans-serif;
+    background-color: var(--paleBlue);
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+#result, #summary {
+    padding: 2rem;
+}
+
+#result {
+    background-image: linear-gradient(
+        to bottom,
+        var(---lightslateblue),
+        var(--lightroyalblue)
+    );
+    text-align: center;
+    border-radius: 0 0 2rem 2rem;
+    padding-inline: 2.5em;
+}
+
+#summary {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    justify-content: center;
+}
+
+#result .title {
+    font-size: 1.5rem;
+    color: var(--lightLavender);
+    margin-bottom: 1rem;
+}
+
+#result .result-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    padding: 2rem;
+    margin: 1.5rem auto;
+    background-image: linear-gradient(
+        to bottom, 
+        var(--violetblue),
+        var(--persianblue)
+    );
+    color: var(--lightLavender);
+}
+
+#result .result-circle span {
+    font-size: 4rem;
+    display: block;
+    color: var(--white);
+}
+
+#result .bold {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+#result .info {
+    color: var(--lightLavender);
+}
+
+#summary .subtitle {
+    font-size: 1.25rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#summary .grades {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+#summary .btn {
+    margin-top: auto;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: var(--darkGrayBlue);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: 'HankenGrotesk-VariableFont_wght', sans-serif;
+    transition: all 0.3s ease;
+}
+
+#summary .btn:hover {
+    background-image: linear-gradient(
+        to bottom,
+        var(---lightslateblue),
+        var(--lightroyalblue)
+    );
+}
+
+ul li {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+ul li img {
+    margin-right: 0.5rem;
+}
+
+ul li:nth-child(1) {
+    background-color: hsla(0, 100%, 67%, 0.2);
+}
+
+ul li:nth-child(1) b {
+    color: var(--lightRed);
+}
+
+ul li:nth-child(2) {
+    background-color: hsla(39, 100%, 56%, 0.2);
+} 
+
+ul li:nth-child(2) b {
+    color: var(--orangeyYellow);
+}
+
+ul li:nth-child(3) {
+    background-color: hsla(166, 100%, 37%, 0.2);
+}
+
+ul li:nth-child(3) b {
+    color: var(--greenTeal);
+} 
+
+ul li:nth-child(4) {
+    background-color: hsla(234, 85%, 45%, 0.2);
+}
+
+ul li:nth-child(4) b {
+    color: var(--cobaltBlue);
+}
+
+@media (min-width: 600px) {
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-container {
+        display: flex;
+        max-width: 680px;
+        overflow: hidden;
+        border-radius: 2rem;
+        background-color: var(--white);
+    }
+
+    #summary, #result {
+        width: 50%;
+    }
+
+    #result {
+        border-radius: 0 2rem 2rem 0;
+    }
+}
